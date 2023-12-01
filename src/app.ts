@@ -10,13 +10,18 @@ import dotenv from 'dotenv';
 import mongoSanitize from 'express-mongo-sanitize';
 import authRoutes from './routes/auth.route';
 import userRoutes from './routes/user.route';
+import droneRoutes from './routes/drone.route';
+import trainerRoutes from './routes/trainer.route';
+
 
 class App {
   private app: Application;
 
   constructor() {
     this.app = express();
-    this.configMiddleware(), this.setUpRoutes(), this.connectToTheDB();
+    this.configMiddleware();
+    this.setUpRoutes();
+    this.connectToTheDB();
   }
 
   private configMiddleware(): void {
@@ -37,7 +42,9 @@ class App {
     });
     // bypass Routes
     this.app.use('/api/auth', authRoutes);
-    this.app.use('/api/auth', userRoutes);
+    this.app.use('/api/auth/users', userRoutes);
+    this.app.use('/api/auth/drones', droneRoutes);
+    this.app.use('/api/auth/trainers', trainerRoutes);
   }
 
   private connectToTheDB(): void {

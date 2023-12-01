@@ -6,7 +6,7 @@ export type droneType = {
   category: string;
   images: string[];
   price: number;
-  trainers:string[]
+  trainers: string[];
   orders: string[];
   rating: number;
   stock: number;
