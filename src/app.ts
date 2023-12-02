@@ -12,7 +12,8 @@ import authRoutes from './routes/auth.route';
 import userRoutes from './routes/user.route';
 import droneRoutes from './routes/drone.route';
 import trainerRoutes from './routes/trainer.route';
-
+import orderRoutes from './routes/order.route';
+import rateLimit from 'express-rate-limit';
 
 class App {
   private app: Application;
@@ -29,6 +30,7 @@ class App {
     this.app.use(morgan('dev'));
     this.app.use(cors());
     this.app.use(urlencoded({ extended: true }));
+    this.app.use(rateLimit({ limit: 5 }));
     this.app.use(mongoSanitize());
     this.app.use(hpp());
     this.app.use(helmet());
@@ -45,6 +47,7 @@ class App {
     this.app.use('/api/auth/users', userRoutes);
     this.app.use('/api/auth/drones', droneRoutes);
     this.app.use('/api/auth/trainers', trainerRoutes);
+    this.app.use('/api/auth/orders', orderRoutes);
   }
 
   private connectToTheDB(): void {

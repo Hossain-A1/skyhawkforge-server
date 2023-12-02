@@ -41,12 +41,12 @@ export default class DronesController {
   // Create a drone
   public async createADrone(req: Request, res: Response): Promise<void> {
     try {
-      const { title, description, category, images, price, rating, stock } =
+      const { title, description,about, category, images, price, rating, stock } =
         req.body;
 
       if (
         !title ||
-        !description ||
+        !description || !about ||
         !category ||
         !images ||
         !price ||
@@ -62,6 +62,7 @@ export default class DronesController {
         const drone = await DroneModel.create({
           title,
           description,
+          about,
           category,
           images,
           price,

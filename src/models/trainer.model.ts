@@ -1,7 +1,7 @@
-import mongoose, { Schema, model } from "mongoose";
-import { trainerType } from "../types/trainer.type";
+import mongoose, { Schema, model } from 'mongoose';
+import { trainerType } from '../types/trainer.type';
 
-const specilistSchema = new Schema<trainerType>(
+const trainerSchema = new Schema<trainerType>(
   {
     name: {
       type: String,
@@ -26,14 +26,14 @@ const specilistSchema = new Schema<trainerType>(
     drones: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Drone",
+        ref: 'Drone',
       },
     ],
   },
   {
     timestamps: true,
-  },
+  }
 );
 
-const SpecilistModel = model<trainerType>("Specilist", specilistSchema);
-export default SpecilistModel;
+const TrainerModel = model<trainerType>('Trainer', trainerSchema);
+export default TrainerModel;

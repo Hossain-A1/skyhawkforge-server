@@ -1,5 +1,5 @@
-import { Document } from "mongoose";
-import { droneType } from "./drone.type";
+import { Document } from 'mongoose';
+import { droneType } from './drone.type';
 
 export type trainerType = {
   name: string;

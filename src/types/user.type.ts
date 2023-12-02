@@ -8,6 +8,6 @@ export type userType = {
   picUrl: string;
   address?: string;
   phoneNo?: string;
-  order: orderType[];
+  orders: orderType[];
   role: 'user' | 'admin';
 } & Document;

@@ -11,6 +11,10 @@ const droneSchema = new Schema<droneType>(
       type: String,
       required: true,
     },
+    about: {
+      type: String,
+      required: true,
+    },
     category: {
       type: String,
       required: true,
@@ -31,13 +35,13 @@ const droneSchema = new Schema<droneType>(
     trainers: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Trainers',
+        ref: 'Trainer',
       },
     ],
     orders: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Orders',
+        ref: 'Order',
       },
     ],
   },
