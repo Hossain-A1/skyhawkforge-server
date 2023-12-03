@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 export type droneType = {
   title: string;
   description: string;
-  about:string;
+  about: string;
   category: string;
   images: string[];
   price: number;

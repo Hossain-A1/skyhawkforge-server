@@ -41,12 +41,21 @@ export default class DronesController {
   // Create a drone
   public async createADrone(req: Request, res: Response): Promise<void> {
     try {
-      const { title, description,about, category, images, price, rating, stock } =
-        req.body;
+      const {
+        title,
+        description,
+        about,
+        category,
+        images,
+        price,
+        rating,
+        stock,
+      } = req.body;
 
       if (
         !title ||
-        !description || !about ||
+        !description ||
+        !about ||
         !category ||
         !images ||
         !price ||

@@ -1,7 +1,6 @@
 import mongoose, { Schema, model } from 'mongoose';
 import { orderType } from '../types/order.type';
 
-
 const OrderSchema = new Schema<orderType>(
   {
     drones: {
