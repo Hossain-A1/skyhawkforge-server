@@ -17,7 +17,6 @@ const user_route_1 = __importDefault(require("./routes/user.route"));
 const drone_route_1 = __importDefault(require("./routes/drone.route"));
 const trainer_route_1 = __importDefault(require("./routes/trainer.route"));
 const order_route_1 = __importDefault(require("./routes/order.route"));
-const express_rate_limit_1 = __importDefault(require("express-rate-limit"));
 class App {
     constructor() {
         this.app = (0, express_1.default)();
@@ -30,7 +29,6 @@ class App {
         this.app.use((0, morgan_1.default)('dev'));
         this.app.use((0, cors_1.default)());
         this.app.use((0, body_parser_1.urlencoded)({ extended: true }));
-        this.app.use((0, express_rate_limit_1.default)({ limit: 5 }));
         this.app.use((0, express_mongo_sanitize_1.default)());
         this.app.use((0, hpp_1.default)());
         this.app.use((0, helmet_1.default)());
@@ -43,10 +41,10 @@ class App {
         });
         // bypass Routes
         this.app.use('/api/auth', auth_route_1.default);
-        this.app.use('/api/auth/users', user_route_1.default);
-        this.app.use('/api/auth/drones', drone_route_1.default);
-        this.app.use('/api/auth/trainers', trainer_route_1.default);
-        this.app.use('/api/auth/orders', order_route_1.default);
+        this.app.use('/api/users', user_route_1.default);
+        this.app.use('/api/drones', drone_route_1.default);
+        this.app.use('/api/trainers', trainer_route_1.default);
+        this.app.use('/api/orders', order_route_1.default);
     }
     connectToTheDB() {
         const uri = process.env.MONGO_URI;
