@@ -55,7 +55,7 @@ class UserController {
         var _a;
         try {
             const { uid } = req.params;
-            const { name, photoUrl, address, phoneNumber } = req.body;
+            const { name, address, phoneNumber } = req.body;
             const userId = (_a = req.user) === null || _a === void 0 ? void 0 : _a.id;
             if (!mongoose_1.default.Types.ObjectId.isValid(uid)) {
                 res.status(404).json({ message: 'User not found' });
@@ -66,7 +66,6 @@ class UserController {
             await Promise.resolve().then(async () => {
                 const user = await user_model_1.default.findByIdAndUpdate(uid, {
                     name,
-                    photoUrl,
                     address,
                     phoneNumber,
                 }, { new: true });

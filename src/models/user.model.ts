@@ -20,10 +20,6 @@ const userSchema = new Schema<userType>(
       type: String,
       required: true,
     },
-    picUrl: {
-      type: String,
-      required: true,
-    },
     address: {
       type: String,
     },

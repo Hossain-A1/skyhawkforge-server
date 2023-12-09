@@ -11,9 +11,9 @@ class AuthController {
     constructor() { }
     async register(req, res) {
         try {
-            const { name, email, password, picUrl, address, phoneNo } = req.body;
+            const { name, email, password, address, phoneNo } = req.body;
             await Promise.resolve().then(async () => {
-                const user = await user_model_1.default.register(name, email, password, picUrl, address, phoneNo);
+                const user = await user_model_1.default.register(name, email, password, address, phoneNo);
                 const token = jwtInstance.createToken(user._id);
                 res.status(200).json({ user, token });
             });

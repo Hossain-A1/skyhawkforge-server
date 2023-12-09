@@ -58,7 +58,7 @@ export default class UserController {
   public async updateAnUser(req: Request, res: Response): Promise<void> {
     try {
       const { uid } = req.params;
-      const { name, photoUrl, address, phoneNumber } = req.body;
+      const { name, address, phoneNumber } = req.body;
       const userId = req.user?.id;
 
       if (!mongoose.Types.ObjectId.isValid(uid)) {
@@ -74,7 +74,6 @@ export default class UserController {
           uid,
           {
             name,
-            photoUrl,
             address,
             phoneNumber,
           },

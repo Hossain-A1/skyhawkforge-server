@@ -10,14 +10,13 @@ export default class AuthController {
 
   public async register(req: Request, res: Response): Promise<void> {
     try {
-      const { name, email, password, picUrl, address, phoneNo } = req.body;
+      const { name, email, password, address, phoneNo } = req.body;
 
       await Promise.resolve().then(async () => {
         const user = await UserModel.register(
           name,
           email,
           password,
-          picUrl,
           address,
           phoneNo
         );
