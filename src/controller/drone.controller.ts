@@ -50,7 +50,7 @@ export default class DronesController {
         price,
         rating,
         stock,
-        count
+        count,
       } = req.body;
 
       if (
@@ -61,7 +61,8 @@ export default class DronesController {
         !images ||
         !price ||
         !rating ||
-        !stock || !count
+        !stock ||
+        !count
       ) {
         throw new Error(
           'Please provide all the following fields: Title, Description, Category, Images, Price, rating ,stock ,count'
@@ -78,7 +79,7 @@ export default class DronesController {
           price,
           rating,
           stock,
-          count
+          count,
         });
 
         res.status(200).json(drone);
@@ -91,8 +92,17 @@ export default class DronesController {
   // Update a drone
   public async updateADrone(req: Request, res: Response): Promise<void> {
     try {
-      const { title, description, category, about,images, price, rating, stock,count } =
-        req.body;
+      const {
+        title,
+        description,
+        category,
+        about,
+        images,
+        price,
+        rating,
+        stock,
+        count,
+      } = req.body;
       const { did } = req.params;
 
       if (!mongoose.Types.ObjectId.isValid(did)) {
@@ -111,7 +121,7 @@ export default class DronesController {
             price,
             rating,
             stock,
-            count
+            count,
           },
           { new: true }
         );

@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import { droneType } from '../types/drone.type';
+import Stripe from 'stripe';
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
 export default class PaymentController {
   constructor() {}
