@@ -11,4 +11,5 @@ export type droneType = {
   orders: string[];
   rating: number;
   stock: number;
+  count:number
 } & Document;

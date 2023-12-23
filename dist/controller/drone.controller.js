@@ -39,7 +39,7 @@ class DronesController {
     // Create a drone
     async createADrone(req, res) {
         try {
-            const { title, description, about, category, images, price, rating, stock, } = req.body;
+            const { title, description, about, category, images, price, rating, stock, count } = req.body;
             if (!title ||
                 !description ||
                 !about ||
@@ -47,8 +47,8 @@ class DronesController {
                 !images ||
                 !price ||
                 !rating ||
-                !stock) {
-                throw new Error('Please provide all the following fields: Title, Description, Category, Images, Price, rating ,stock');
+                !stock || !count) {
+                throw new Error('Please provide all the following fields: Title, Description, Category, Images, Price, rating ,stock ,count');
             }
             await Promise.resolve().then(async () => {
                 const drone = await drone_model_1.default.create({
@@ -60,6 +60,7 @@ class DronesController {
                     price,
                     rating,
                     stock,
+                    count
                 });
                 res.status(200).json(drone);
             });
@@ -71,7 +72,7 @@ class DronesController {
     // Update a drone
     async updateADrone(req, res) {
         try {
-            const { title, description, category, images, price, rating, stock } = req.body;
+            const { title, description, category, about, images, price, rating, stock, count } = req.body;
             const { did } = req.params;
             if (!mongoose_1.default.Types.ObjectId.isValid(did)) {
                 res.status(404).json({ message: 'Drone not found' });
@@ -80,11 +81,13 @@ class DronesController {
                 const drone = await drone_model_1.default.findByIdAndUpdate(did, {
                     title,
                     description,
+                    about,
                     category,
                     images,
                     price,
                     rating,
                     stock,
+                    count
                 }, { new: true });
                 res.status(200).json(drone);
             });

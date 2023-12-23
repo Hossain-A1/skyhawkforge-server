@@ -50,6 +50,7 @@ export default class DronesController {
         price,
         rating,
         stock,
+        count
       } = req.body;
 
       if (
@@ -60,10 +61,10 @@ export default class DronesController {
         !images ||
         !price ||
         !rating ||
-        !stock
+        !stock || !count
       ) {
         throw new Error(
-          'Please provide all the following fields: Title, Description, Category, Images, Price, rating ,stock'
+          'Please provide all the following fields: Title, Description, Category, Images, Price, rating ,stock ,count'
         );
       }
 
@@ -77,6 +78,7 @@ export default class DronesController {
           price,
           rating,
           stock,
+          count
         });
 
         res.status(200).json(drone);
@@ -89,7 +91,7 @@ export default class DronesController {
   // Update a drone
   public async updateADrone(req: Request, res: Response): Promise<void> {
     try {
-      const { title, description, category, images, price, rating, stock } =
+      const { title, description, category, about,images, price, rating, stock,count } =
         req.body;
       const { did } = req.params;
 
@@ -103,11 +105,13 @@ export default class DronesController {
           {
             title,
             description,
+            about,
             category,
             images,
             price,
             rating,
             stock,
+            count
           },
           { new: true }
         );

@@ -32,6 +32,10 @@ const droneSchema = new Schema<droneType>(
       type: Number,
       require: true,
     },
+    count: {
+      type: Number,
+      require: true,
+    },
     trainers: [
       {
         type: mongoose.Schema.Types.ObjectId,

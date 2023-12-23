@@ -13,6 +13,7 @@ import userRoutes from './routes/user.route';
 import droneRoutes from './routes/drone.route';
 import trainerRoutes from './routes/trainer.route';
 import orderRoutes from './routes/order.route';
+import paymentRoute from './routes/payment.route';
 
 class App {
   private app: Application;
@@ -46,6 +47,7 @@ class App {
     this.app.use('/api/drones', droneRoutes);
     this.app.use('/api/trainers', trainerRoutes);
     this.app.use('/api/orders', orderRoutes);
+    this.app.use('/api', paymentRoute);
   }
 
   private connectToTheDB(): void {
