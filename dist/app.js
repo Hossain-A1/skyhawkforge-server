@@ -46,7 +46,7 @@ class App {
         this.app.use('/api/drones', drone_route_1.default);
         this.app.use('/api/trainers', trainer_route_1.default);
         this.app.use('/api/orders', order_route_1.default);
-        this.app.use('/api/create-checkout-session', payment_route_1.default);
+        this.app.use('/api', payment_route_1.default);
     }
     connectToTheDB() {
         const uri = process.env.MONGO_URI;

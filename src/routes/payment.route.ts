@@ -8,7 +8,7 @@ const paymentRouter: Router = express.Router();
 
 // user route
 paymentRouter.post(
-  '/:did',
+  '/create-checkout-session',
   authInstance.isAuthorized,
   paymentInstance.createStripeCheckout
 );

@@ -10,6 +10,6 @@ const paymentInstance = new payment_controller_1.default();
 const authInstance = new auth_middleware_1.default();
 const paymentRouter = express_1.default.Router();
 // user route
-paymentRouter.post('/:did', authInstance.isAuthorized, paymentInstance.createStripeCheckout);
+paymentRouter.post('/create-checkout-session', authInstance.isAuthorized, paymentInstance.createStripeCheckout);
 // drone route
 exports.default = paymentRouter;
