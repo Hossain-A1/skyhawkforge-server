@@ -47,7 +47,7 @@ class App {
     this.app.use('/api/drones', droneRoutes);
     this.app.use('/api/trainers', trainerRoutes);
     this.app.use('/api/orders', orderRoutes);
-    this.app.use('/api', paymentRoute);
+    this.app.use('/api/stripe', paymentRoute);
   }
 
   private connectToTheDB(): void {
