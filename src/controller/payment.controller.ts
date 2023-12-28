@@ -16,7 +16,7 @@ export default class PaymentController {
       const { items, name, email, mobile, address, courseTitle, courseId } =
         req.body;
 
-      const transformedItems = items.map((item: any) => ({
+      const transformedItems = items.map((item: droneType) => ({
         quantity: 1,
         price_data: {
           currency: 'USD',
