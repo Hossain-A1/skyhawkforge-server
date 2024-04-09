@@ -1,0 +1,23 @@
+[33md165967[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit: Your commit message here
+[33m27c484b[m HEAD@{1}: commit: ss
+[33m94870cf[m HEAD@{2}: commit: ff
+[33m2ba8409[m HEAD@{3}: commit: payment added
+[33m0951a42[m HEAD@{4}: commit: stripe payment added
+[33m508e315[m HEAD@{5}: commit: ff
+[33m7e65fd3[m HEAD@{6}: commit: fixed
+[33m4e1319d[m HEAD@{7}: commit: stripe
+[33mbaaa4a2[m HEAD@{8}: commit: route fix
+[33m8509d87[m HEAD@{9}: commit: stripe payment integration added
+[33m2df5f76[m HEAD@{10}: commit: stripe payment integration added
+[33mceddabb[m HEAD@{11}: commit: update
+[33m902935d[m HEAD@{12}: commit: update api
+[33mef72ea3[m HEAD@{13}: commit: node v added
+[33m5ce006a[m HEAD@{14}: commit: node up an d build added
+[33m1430219[m HEAD@{15}: commit: build added
+[33m43605c7[m HEAD@{16}: commit: jwt-issue fixed
+[33m37d4f8c[m HEAD@{17}: commit: dist added
+[33mfd65ed0[m HEAD@{18}: commit: trainer controller added
+[33m6b557fd[m HEAD@{19}: commit: trainers model, route,controller done
+[33m7fc45b5[m HEAD@{20}: commit: husky added
+[33m4aeb67c[m HEAD@{21}: Branch: renamed refs/heads/master to refs/heads/main
+[33m4aeb67c[m HEAD@{23}: commit (initial): user and drone models added

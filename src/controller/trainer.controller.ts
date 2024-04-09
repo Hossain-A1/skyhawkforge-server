@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { handleError } from '../errors/manage.error';
 import TrainerModel from '../models/trainer.model';
-import DroneModel from '../models/drone.model';
+import DroneModel from '../models/product.model';
 
 export default class TrainerController {
   constructor() {}

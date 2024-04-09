@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { handleError } from '../errors/manage.error';
-import DroneModel from '../models/drone.model';
+import DroneModel from '../models/product.model';
 
 export default class DronesController {
   constructor() {}
 
   // Get all drones
-  public async getAllDrones(req: Request, res: Response): Promise<void> {
+  public async getAllProducts(req: Request, res: Response): Promise<void> {
     try {
       await Promise.resolve().then(async () => {
         const drones = await DroneModel.find({});
@@ -20,7 +20,7 @@ export default class DronesController {
   }
 
   // Get a drone
-  public async getADrone(req: Request, res: Response): Promise<void> {
+  public async getProduct(req: Request, res: Response): Promise<void> {
     try {
       const { did } = req.params;
 
@@ -39,7 +39,7 @@ export default class DronesController {
   }
 
   // Create a drone
-  public async createADrone(req: Request, res: Response): Promise<void> {
+  public async createProduct(req: Request, res: Response): Promise<void> {
     try {
       const {
         title,
@@ -90,7 +90,7 @@ export default class DronesController {
   }
 
   // Update a drone
-  public async updateADrone(req: Request, res: Response): Promise<void> {
+  public async updateProduct(req: Request, res: Response): Promise<void> {
     try {
       const {
         title,
@@ -134,7 +134,7 @@ export default class DronesController {
   }
 
   // Delete a drone
-  public async deleteADrone(req: Request, res: Response): Promise<void> {
+  public async deleteProduct(req: Request, res: Response): Promise<void> {
     try {
       const { did } = req.params;
 

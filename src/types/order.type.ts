@@ -1,5 +1,5 @@
 import { Document } from 'mongoose';
-import { droneType } from './drone.type';
+import { droneType } from './product.type';
 import { userType } from './user.type';
 
 export type orderType = {
