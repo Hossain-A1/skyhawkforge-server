@@ -1,5 +1,5 @@
 import mongoose, { Schema, model } from 'mongoose';
-import { droneType } from '../types/drone.type';
+import { droneType } from '../types/product.type';
 
 const droneSchema = new Schema<droneType>(
   {
@@ -32,16 +32,7 @@ const droneSchema = new Schema<droneType>(
       type: Number,
       require: true,
     },
-    count: {
-      type: Number,
-      require: true,
-    },
-    trainers: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Trainer',
-      },
-    ],
+
     orders: [
       {
         type: mongoose.Schema.Types.ObjectId,

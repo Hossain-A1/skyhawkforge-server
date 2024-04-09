@@ -10,8 +10,7 @@ import dotenv from 'dotenv';
 import mongoSanitize from 'express-mongo-sanitize';
 import authRoutes from './routes/auth.route';
 import userRoutes from './routes/user.route';
-import droneRoutes from './routes/drone.route';
-import trainerRoutes from './routes/trainer.route';
+import droneRoutes from './routes/product.route';
 import orderRoutes from './routes/order.route';
 import paymentRoute from './routes/payment.route';
 
@@ -45,7 +44,6 @@ class App {
     this.app.use('/api/auth', authRoutes);
     this.app.use('/api/users', userRoutes);
     this.app.use('/api/drones', droneRoutes);
-    this.app.use('/api/trainers', trainerRoutes);
     this.app.use('/api/orders', orderRoutes);
     this.app.use('/api', paymentRoute);
   }
