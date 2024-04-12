@@ -46,7 +46,7 @@ class App {
     this.app.use('/api/users', userRoutes);
     this.app.use('/api/drones', droneRoutes);
     this.app.use('/api/orders', orderRoutes);
-    this.app.use('/api/orders', trainerRouter);
+    this.app.use('/api/trainers', trainerRouter);
 
     this.app.use('/api', paymentRoute);
   }
