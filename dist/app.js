@@ -45,7 +45,7 @@ class App {
         this.app.use('/api/users', user_route_1.default);
         this.app.use('/api/drones', product_route_1.default);
         this.app.use('/api/orders', order_route_1.default);
-        this.app.use('/api/orders', trainer_toute_1.default);
+        this.app.use('/api/trainers', trainer_toute_1.default);
         this.app.use('/api', payment_route_1.default);
     }
     connectToTheDB() {
